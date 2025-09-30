@@ -2,13 +2,14 @@ package smarthome.app;
 
 import java.util.ArrayList;
 import smarthome.model.Light;
+import smarthome.model.Schedulable;
 import smarthome.model.SmartDevice;
 import smarthome.model.Thermostat;
 /**
  *
  * @author ch.h
  */
-public class SmartHomeTest {
+public class SmartHomeTest1 {
     /**
      * @param args the command line arguments
      */
@@ -29,5 +30,6 @@ public class SmartHomeTest {
             light.setBrightness(20);
         }
         System.out.println(ting.get(2));
+        
     }
 }
