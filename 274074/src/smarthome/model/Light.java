@@ -1,6 +1,6 @@
 package smarthome.model;
 
-public class Light extends SmartDevice {
+public class Light extends SmartDevice { // I dont want to use implements schedulable, because it already inherits it from the superclass.
     private int brightness;
     private String scheduledTime;
 
@@ -23,6 +23,8 @@ public class Light extends SmartDevice {
         }
     @Override
     public String toString() {
+        if (scheduledTime == null)
+            return " Light             " + super.toString().replace("]", ", Brightness: "  + brightness + "]"); // Modifiserer fra superklassen.
         return " Light             " + super.toString().replace("]", ", Brightness: "  + brightness + "] Planlagt start:  " + scheduledTime); // Modifiserer fra superklassen.
     }
 }

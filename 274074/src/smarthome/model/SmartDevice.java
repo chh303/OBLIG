@@ -2,7 +2,7 @@ package smarthome.model;
 
 public abstract class SmartDevice implements Schedulable {
     private final String name;
-    private boolean isOn;
+    protected boolean isOn;
     private String scheduledTime;
 
     public SmartDevice(String name) {

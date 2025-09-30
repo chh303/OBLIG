@@ -31,7 +31,7 @@ public class MotionSensor extends Sensor {
     @Override
     public String toString() {
         if (!"ON".equals(status())) 
-            return "Device is off!";
+            return " MotionSensor      " + super.toString();
         return " MotionSensor      " + super.toString() + " " + movement();
     }
 }

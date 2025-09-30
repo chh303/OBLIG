@@ -10,10 +10,9 @@ import smarthome.model.Light;
 import smarthome.model.MotionSensor;
 import smarthome.model.Schedulable;
 import smarthome.model.Sensor;
-import smarthome.model.SmartDevice;
-import smarthome.model.SmartHomeApp;
 import smarthome.model.TemperaturSensor;
 import smarthome.model.Thermostat;
+import smarthome.packages.SmartHomeApp;
 
 /**
  *
@@ -56,6 +55,7 @@ public class SmartHomeTest2 {
         app.addDevice(new MotionSensor("Uteplass"));
         app.addDevice(new Thermostat("Bade-rom", 20.0));
         app.addDevice(new TemperaturSensor("Soverom"));
+        app.turnOffDevice(3);
         app.listDevices();
     }
 }

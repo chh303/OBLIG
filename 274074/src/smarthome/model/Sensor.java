@@ -19,6 +19,8 @@ public abstract class Sensor extends SmartDevice {
 
     // toString() skal returnere kort info om sensoren, inkludert navn og eventuelt siste verdi.
     public String toString() {
-        return super.toString() + ": " + readValue();
+        if (this.isOn == true)
+            return super.toString() + ": " + readValue();
+        return super.toString();
     }
 }

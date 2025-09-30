@@ -24,9 +24,9 @@ public class TemperaturSensor extends Sensor {
     }
     @Override
     public String toString() {
-        if (!"ON".equals(status()))
-            return "Device is off.";
-        return " TemperatureSensor " + super.toString() + "C";
+        if (this.isOn == true)
+            return " TemperatureSensor " + super.toString() + "C";
+        return " TemperatureSensor " + super.toString();
     }
 
 
