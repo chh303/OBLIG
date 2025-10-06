@@ -2,7 +2,6 @@ package smarthome.app;
 
 import java.util.ArrayList;
 import smarthome.model.Light;
-import smarthome.model.Schedulable;
 import smarthome.model.SmartDevice;
 import smarthome.model.Thermostat;
 /**
