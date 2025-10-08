@@ -8,10 +8,18 @@ public class Battery {
 		this.currentLevel = 100;
 	}
 	public void use() {
-		this.currentLevel -= 5;
+		this.currentLevel -= 1;
 	}
 	public String getLevel() {
-		return Integer.toString(this.currentLevel) + "%";
+		return Integer.toString(this.currentLevel);
+	}
+	public int getBatteryLevel() {
+		return currentLevel;
+	}
+	public boolean batteryCheck() {
+		if (currentLevel > 0)
+			return true;
+		return false;
 	}
 	   public void charge() {
 	   	if (this.currentLevel <= capacity) {

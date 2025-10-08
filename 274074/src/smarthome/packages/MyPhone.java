@@ -1,6 +1,7 @@
 // 34, 355
 package smarthome.packages;
 import java.util.ArrayList;
+
 public class MyPhone {
    private String brand;
    private String model;
@@ -62,18 +63,22 @@ public class MyPhone {
    }
 
    public String displayInfo() {
-      battery.use();
-      StringBuilder info = new StringBuilder();
-      info.append("myPhone: \nBrand - ").append(this.brand).append("\n");
-      info.append("Model - ").append(this.model).append("\n");
-      info.append("Storage capacity - ").append(this.storageCapacity).append("\n");
-      info.append("Batterylevel - ").append(this.battery.getLevel()).append("%" + "\n");
-      info.append("Apps: \n");
+      if (getBattery().batteryCheck()) { // Checks if phone has battery
+         battery.use();
+         StringBuilder info = new StringBuilder();
+         info.append("\nmyPhone: \nBrand - ").append(this.brand).append("\n");
+         info.append("Model - ").append(this.model).append("\n");
+         info.append("Storage capacity - ").append(this.storageCapacity).append("\n");
+         info.append("Batterylevel - ").append(this.battery.getLevel()).append("%" + "\n");
+         info.append("Apps: \n");
 
 
-      for (App App : this.app) {
-         info.append("  ").append(App.getApp()).append("\n");
+         for (App App : this.app) {
+            info.append("  ").append(App.getApp()).append("\n");
+         }
+         return info.toString();
       }
-      return info.toString();
+      String error = "\n" + "\u001B[31m" + "Battery is dead, charge phone!" + "\u001B[0m";
+      return error;
    }
 }

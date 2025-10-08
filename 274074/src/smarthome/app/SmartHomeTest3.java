@@ -15,11 +15,13 @@ public class SmartHomeTest3 {
     public static void main(String[] args) {
 
         ArrayList<App> apps = new ArrayList<>();
-        MyPhone mobil = new MyPhone("Nokia", "8.0.1", 4, apps);
-
-        System.out.println("\nInstallerer SmartHomeApp ... ... \n");
-        SmartHomeApp homeApp = new SmartHomeApp();
+        MyPhone mobil = new MyPhone("Nokia", "3310", 4, apps);
+        System.out.println("\n" + mobil.displayInfo());
+        
+        System.out.println("\nInstallerer SmartHomeApp ... ...");
+        SmartHomeApp homeApp = new SmartHomeApp().setPhone(mobil);
         apps.add(homeApp);
+        homeApp.runApp();
 
         System.out.println("\nEnheter i appen:"); // Method chaining.
         homeApp.addDevice(new Light("Stuelys", 0))
@@ -35,5 +37,8 @@ public class SmartHomeTest3 {
         homeApp.setLightBrightness(0, 100);
         homeApp.setThermostatTemperature(1, 25);
         homeApp.listDevices();
+
+        homeApp.closeApp();
+        System.out.println(mobil.displayInfo());
     }
 }
