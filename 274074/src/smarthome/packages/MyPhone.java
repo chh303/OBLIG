@@ -1,6 +1,5 @@
 // 34, 355
 package smarthome.packages;
-import java.lang.*;
 import java.util.ArrayList;
 public class MyPhone {
    private String brand;
@@ -15,7 +14,7 @@ public class MyPhone {
       madePhone++;
    }
 
-   public MyPhone(String brand, String model, int storageCapacity, int batteryLevel, ArrayList<App> app) {
+   public MyPhone(String brand, String model, int storageCapacity, ArrayList<App> app) {
       this.brand = brand;
       this.model = model;
       this.storageCapacity = storageCapacity;

@@ -25,6 +25,8 @@ public class Thermostat extends SmartDevice {
     }
     @Override // Overkjører metoden med samme navn fra superklassen.
     public String toString() {
+        if (scheduledTime == null) // Sjekker om den har en scheduledTime før den returnerer og gir med planlagt om den har.
+            return " Thermostat        " + super.toString().replace("]", ", Temperature: " + temperature + "°C]");
         return " Thermostat        " + super.toString().replace("]", ", Temperature: " + temperature + "°C] Planlagt start:  " + scheduledTime); // Modifiserer fra superklassen for å også få navn.
     }
 }
