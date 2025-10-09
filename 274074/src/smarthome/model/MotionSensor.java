@@ -11,7 +11,7 @@ package smarthome.model;
  */
 public class MotionSensor extends Sensor {
 
-    private final double X = Math.random() > 0.5 ? 0.0 : 1.0; // Flyttet variabelen ut av readValue() for å sørge for at den ikke er tilfeldig vær gang en kalles på.
+    private final double X = Math.random() > 0.5 ? 0.0 : 1.0; // Moved the variable out of readValue() to ensure it is not random each time it is called.Retry
 
     public MotionSensor(String name) {
         super(name);
@@ -31,7 +31,7 @@ public class MotionSensor extends Sensor {
     @Override
     public String toString() {
         if (!"ON".equals(status())) 
-            return " MotionSensor      " + super.toString();
-        return " MotionSensor      " + super.toString() + " " + movement();
+            return "MotionSensor      " + super.toString();
+        return "MotionSensor      " + super.toString() + " " + movement();
     }
 }

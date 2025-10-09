@@ -23,6 +23,16 @@ public class MyPhone {
       this.app = app;
       madePhone++;
    }
+   protected boolean tryUsePhone(MyPhone phone) {
+        if (phone == null) return true; // Checks if there is a phone
+        
+        if (phone.getBattery().batteryCheck()) { // Checks if there is battery on phone
+            phone.getBattery().use(); // Calls on battery class to drain battery from using.
+            return true;
+        }
+        System.out.println("\nBattery is dead, charge phone!\n");
+        return false;
+    }
    public Battery getBattery() {
       return battery;
    }

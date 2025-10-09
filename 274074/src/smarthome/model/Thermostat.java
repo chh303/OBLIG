@@ -5,7 +5,7 @@ public class Thermostat extends SmartDevice {
     private String scheduledTime;
 
     public Thermostat(String name, double temperature) {
-        super(name); // Kaller SmartDevice konstruktøren først
+        super(name); // Calls on SmartDevice constructor
         this.temperature = temperature;
         if (temperature > 0) 
             turnOn();
@@ -23,10 +23,10 @@ public class Thermostat extends SmartDevice {
             turnOff(); // Or it turns off
 
     }
-    @Override // Overkjører metoden med samme navn fra superklassen.
+    @Override // Get prioritised over method with same name in superclass
     public String toString() {
-        if (scheduledTime == null) // Sjekker om den har en scheduledTime før den returnerer og gir med planlagt om den har.
-            return " Thermostat        " + super.toString().replace("]", ", Temperature: " + temperature + "°C]");
-        return " Thermostat        " + super.toString().replace("]", ", Temperature: " + temperature + "°C] Planlagt start:  " + scheduledTime); // Modifiserer fra superklassen for å også få navn.
+        if (scheduledTime == null) // Checks if it has a scheduledTime before returning and includes scheduled if it has one.Retry
+            return "Thermostat        " + super.toString().replace("]", ", Temperature: " + temperature + "°C]");
+        return "Thermostat        " + super.toString().replace("]", ", Temperature: " + temperature + "°C] Planlagt start:  " + scheduledTime); // Modifies from the superclass to also get the name.Retry
     }
 }

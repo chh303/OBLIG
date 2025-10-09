@@ -23,8 +23,9 @@ public class Light extends SmartDevice { // I dont want to use implements schedu
         }
     @Override
     public String toString() {
-        if (scheduledTime == null)  // Sjekker om den har en scheduledTime før den returnerer og gir med planlagt om den har.
-            return " Light             " + super.toString().replace("]", ", Brightness: "  + brightness + "]"); // Modifiserer fra superklassen.
-        return " Light             " + super.toString().replace("]", ", Brightness: "  + brightness + "] Planlagt start:  " + scheduledTime); // Modifiserer fra superklassen.
+        if (scheduledTime == null)  // Checks if it has a scheduledTime before returning and includes scheduled if it has one.Retry
+            return "Light             " + super.toString().replace("]", ", Brightness: "  + brightness + "]"); // Modifies from the superclass.
+        else 
+            return "Light             " + super.toString().replace("]", ", Brightness: "  + brightness + "] Planlagt start:  " + scheduledTime);
     }
 }

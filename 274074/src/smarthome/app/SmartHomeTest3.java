@@ -15,11 +15,11 @@ public class SmartHomeTest3 {
     public static void main(String[] args) {
 
         ArrayList<App> apps = new ArrayList<>();
-        MyPhone mobil = new MyPhone("Nokia", "3310", 4, apps);
-        System.out.println("\n" + mobil.displayInfo());
+        MyPhone phone = new MyPhone("Nokia", "3310", 4, apps);
+        System.out.println("\n" + phone.displayInfo());
         
         System.out.println("\nInstallerer SmartHomeApp ... ...");
-        SmartHomeApp homeApp = new SmartHomeApp().setPhone(mobil);
+        SmartHomeApp homeApp = new SmartHomeApp().setPhone(phone);
         apps.add(homeApp);
         homeApp.runApp();
 
@@ -39,6 +39,6 @@ public class SmartHomeTest3 {
         homeApp.listDevices();
 
         homeApp.closeApp();
-        System.out.println(mobil.displayInfo());
+        System.out.println(phone.displayInfo());
     }
 }

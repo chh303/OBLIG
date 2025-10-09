@@ -14,10 +14,10 @@ public abstract class Sensor extends SmartDevice {
     public Sensor(String name) {
         super(name);
     }
-    // Én abstrakt metode: double readValue().
+    // A abstrakt method: double readValue().
     public abstract double readValue();
 
-    // toString() skal returnere kort info om sensoren, inkludert navn og eventuelt siste verdi.
+    // toString() should return short info about sensor, including name and last data if there is any.
     public String toString() {
         if (this.isOn == true)
             return super.toString() + ": " + readValue();

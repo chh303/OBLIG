@@ -20,9 +20,7 @@ public class TemperaturSensor extends Sensor {
     @Override
     public String toString() {
         if (this.isOn == true)
-            return " TemperatureSensor " + super.toString() + "C";
-        return " TemperatureSensor " + super.toString();
+            return "TemperatureSensor " + super.toString() + "C";
+        return "TemperatureSensor " + super.toString();
     }
-
-
 }
