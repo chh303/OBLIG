@@ -7,8 +7,6 @@ package smarthome.app;
 
 import java.util.Scanner;
 
-
-
 /**
  *
  * @author ch.h
