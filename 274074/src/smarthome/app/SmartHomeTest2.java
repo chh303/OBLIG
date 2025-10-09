@@ -12,7 +12,6 @@ import smarthome.model.Schedulable;
 import smarthome.model.Sensor;
 import smarthome.model.TemperaturSensor;
 import smarthome.model.Thermostat;
-import smarthome.packages.SmartHomeApp;
 
 /**
  *
@@ -47,15 +46,5 @@ public class SmartHomeTest2 {
             System.out.println(list.toString());
         }
         System.out.println();
-        System.out.println();
-        System.out.println();
-        
-        SmartHomeApp app = new SmartHomeApp();
-        app.addDevice(new Light("Stue-lys", 50));
-        app.addDevice(new MotionSensor("Uteplass"));
-        app.addDevice(new Thermostat("Bade-rom", 20.0));
-        app.addDevice(new TemperaturSensor("Soverom"));
-        app.turnOffDevice(3);
-        app.listDevices();
     }
 }

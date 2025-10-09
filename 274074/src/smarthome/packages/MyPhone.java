@@ -12,6 +12,7 @@ public class MyPhone {
 
 
    public MyPhone() {
+      this.battery = new Battery();
       madePhone++;
    }
 
