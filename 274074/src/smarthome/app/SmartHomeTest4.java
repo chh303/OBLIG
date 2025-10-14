@@ -25,7 +25,7 @@ public class SmartHomeTest4 {
 
         apps.add(homeApp);
         homeApp.runApp();
-        homeApp.addDevice(new Light("Stuelys", 0))
+        homeApp.addDevice(new Light("Stuelys", 0)) // Upcasting, Java expects a SmartDevice but automaticly sees the subclass light that extends it.
                 .addDevice(new Light("Badlys", 0))
                 .addDevice(new Thermostat("Baderom", 0));
 
