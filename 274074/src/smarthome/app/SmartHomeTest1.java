@@ -13,22 +13,28 @@ public class SmartHomeTest1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<SmartDevice> ting = new ArrayList<>();
-        ting.add(new Light("Stue-lys", 100));
-        ting.add(new Thermostat("Badrom", 50));
-
-
-        for (SmartDevice tingene : ting) {
-            tingene.turnOn();
-            tingene.schedule("14:00");
-            System.out.println(tingene.toString());
-        }
-        ting.add(new Light("Stue-lyss", 100));
-        System.out.println(ting.get(2));
-        if (ting.get(2) instanceof Light light) {
-            light.setBrightness(20);
-        }
-        System.out.println(ting.get(2));
         
+        SmartDevice o = new Light("x", 2); // Example of implicit casting
+        Light b = (Light) o; // Explicit casting
+
+
+        ArrayList<SmartDevice> devices = new ArrayList<>();
+        devices.add(new Light("Stue-lys", 0));
+        devices.add(new Thermostat("Badrom", 0));
+
+        System.out.println("\nTurning on all devices... ...");
+        for (SmartDevice dev : devices) {
+            if (dev instanceof Light lys) { // Downcast to light
+                lys.setBrightness(100); // Turns on with setBrightness, because if brightness is 0 it would still be off in real life.
+            } else if (dev instanceof Thermostat therm) { // Downcast to thermostat
+                therm.setTemperature(20); // The same concept here.
+            }
+            System.out.println(dev.toString());
+        }
+        System.out.println("\nTurning off all devices... ...");
+        for (SmartDevice dev : devices){
+            dev.turnOff();
+            System.out.println(dev.toString());
+        }
     }
 }
